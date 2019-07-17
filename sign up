@@ -1,0 +1,22 @@
+  //Sign up function 
+  signUp=(email,password)=>{
+    try {
+      if(this.state.password.length < 6){
+        Alert.alert("Please enter atLeast 6 characters")
+      }
+      else if(password!=this.state.confirmPassword){
+        Alert.alert("Your Password is not match with confirm Password")
+      }
+      else{
+       Firebase.auth().createUserWithEmailAndPassword(email,password)
+       alert(this.state.email)
+       alert(this.state.password)
+       
+      }
+ 
+    } catch (error) {
+     
+     console.log(error.toString())
+      }
+   }
+
